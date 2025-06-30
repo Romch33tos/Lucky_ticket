@@ -35,6 +35,38 @@ class LuckyTicket:
 
     self.check_ticket()
 
+  def check_ticket(self):
+    digits = [
+      int(self.digit1.get()),
+      int(self.digit2.get()),
+      int(self.digit3.get()),
+      int(self.digit4.get()),
+      int(self.digit5.get()),
+      int(self.digit6.get())
+    ]
+
+    if sum(digits[:3]) == sum(digits[3:]):
+      mb.showinfo(
+        title="О билете",
+        message="Это счастливый билет"
+      )
+    else:
+      mb.showinfo(
+        title="О билете",
+        message="Это обычный билет."
+      )
+
+    self.clear_fields()
+
+  def clear_fields(self):
+    self.digit1.delete(0, 'end')
+    self.digit2.delete(0, 'end')
+    self.digit3.delete(0, 'end')
+    self.digit4.delete(0, 'end')
+    self.digit5.delete(0, 'end')
+    self.digit6.delete(0, 'end')
+    self.digit1.focus()
+
   def create_widgets(self):
     Label(
       self.window,
