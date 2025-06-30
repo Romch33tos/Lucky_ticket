@@ -15,6 +15,26 @@ class LuckyTicket:
     self.create_widgets()
     self.window.mainloop()
 
+  def validate_input(self, event):
+    digits = [
+      self.digit1.get(),
+      self.digit2.get(),
+      self.digit3.get(),
+      self.digit4.get(),
+      self.digit5.get(),
+      self.digit6.get()
+    ]
+
+    for digit in digits:
+      if not digit.isdigit() or len(digit) != 1:
+        mb.showerror(
+          title="Ошибка",
+          message="Введите по одной цифре от 0 до 9 в каждое поле!"
+        )
+        return
+
+    self.check_ticket()
+
   def create_widgets(self):
     Label(
       self.window,
