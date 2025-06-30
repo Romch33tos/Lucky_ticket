@@ -56,5 +56,35 @@ class LuckyTicket:
       fg="maroon1"
     ).grid(row=4, column=0, sticky=NW, padx=40, pady=10)
 
+    self.digit1 = Entry(self.window, width=3, justify=CENTER,
+                      font=("Calibri", 14), foreground="maroon1")
+    self.digit1.grid(row=4, column=0, sticky=NW, padx=80, pady=10)
+    self.digit1.bind('<Return>', self.validate_input)
+
+    self.digit2 = Entry(self.window, width=3, justify=CENTER,
+                      font=("Calibri", 14), foreground="maroon1")
+    self.digit2.grid(row=4, column=0, sticky=NW, padx=120, pady=10)
+    self.digit2.bind('<Return>', self.validate_input)
+
+    self.digit3 = Entry(self.window, width=3, justify=CENTER,
+                      font=("Calibri", 14), foreground="maroon1")
+    self.digit3.grid(row=4, column=0, sticky=NW, padx=160, pady=10)
+    self.digit3.bind('<Return>', self.validate_input)
+
+    self.digit4 = Entry(self.window, width=3, justify=CENTER,
+                      font=("Calibri", 14), foreground="maroon1")
+    self.digit4.grid(row=4, column=0, sticky=NW, padx=200, pady=10)
+    self.digit4.bind('<Return>', self.validate_input)
+
+    self.digit5 = Entry(self.window, width=3, justify=CENTER,
+                      font=("Calibri", 14), foreground="maroon1")
+    self.digit5.grid(row=4, column=0, sticky=NW, padx=240, pady=10)
+    self.digit5.bind('<Return>', self.validate_input)
+
+    self.digit6 = Entry(self.window, width=3, justify=CENTER,
+                      font=("Calibri", 14), foreground="maroon1")
+    self.digit6.grid(row=4, column=0, sticky=NW, padx=280, pady=10)
+    self.digit6.bind('<Return>', self.validate_input)
+
 if __name__ == "__main__":
   app = LuckyTicket()
