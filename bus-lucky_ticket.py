@@ -11,7 +11,7 @@ class LuckyTicket:
 
     self.bus_numbers = ['AА', 'АБ', 'АВ', 'АГ', 'АЖ', 'АЗ', 'АК', 'АЛ', 'АМ',
                        'АН', 'АО', 'АП', 'АР', 'АС', 'АТ']
-
+    
     self.create_widgets()
     self.window.mainloop()
 
@@ -32,7 +32,7 @@ class LuckyTicket:
           message="Введите по одной цифре от 0 до 9 в каждое поле!"
         )
         return
-
+    
     self.check_ticket()
 
   def check_ticket(self):
@@ -44,18 +44,18 @@ class LuckyTicket:
       int(self.digit5.get()),
       int(self.digit6.get())
     ]
-
+    
     if sum(digits[:3]) == sum(digits[3:]):
       mb.showinfo(
         title="О билете",
-        message="Это счастливый билет!"
+        message="Это счастливый билет"
       )
     else:
       mb.showinfo(
         title="О билете",
         message="Это обычный билет."
       )
-
+    
     self.clear_fields()
 
   def clear_fields(self):
@@ -70,7 +70,7 @@ class LuckyTicket:
   def create_widgets(self):
     Label(
       self.window,
-      text="Минтранс РФ",
+      text="   Минтранс РФ",
       font=("Calibri", 10),
       bg="snow1",
       fg="chartreuse4"
@@ -78,15 +78,15 @@ class LuckyTicket:
 
     Label(
       self.window,
-      text="АО «КТК»              ОДНА ПОЕЗДКА",
-      font=("Calibri", 12),
+      text="АО «КТК»                                ОДНА ПОЕЗДКА",
+      font=("Calibri", 12, 'bold'),
       bg="snow1",
       fg="chartreuse4"
     ).grid(row=1, column=0, sticky=NW, padx=20, pady=5)
 
     Label(
       self.window,
-      text="АВТОБУС",
+      text="А В Т О Б У С",
       font=("Calibri", 14, 'bold'),
       bg="snow1",
       fg="chartreuse4"
@@ -95,7 +95,7 @@ class LuckyTicket:
     Label(
       self.window,
       text="ТЕРМИНАЛ (Транспортная карта)",
-      font=("Calibri", 12),
+      font=("Calibri", 12, 'bold'),
       bg="snow1",
       fg="chartreuse4"
     ).grid(row=3, column=0, sticky=NW, padx=20, pady=5)
@@ -137,6 +137,7 @@ class LuckyTicket:
                       font=("Calibri", 14), foreground="maroon1")
     self.digit6.grid(row=4, column=0, sticky=NW, padx=280, pady=10)
     self.digit6.bind('<Return>', self.validate_input)
+
 
 if __name__ == "__main__":
   app = LuckyTicket()
