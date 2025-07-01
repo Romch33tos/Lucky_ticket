@@ -7,6 +7,9 @@ class LuckyTramTicket:
     self.window.configure(bg='snow')
     self.window.resizable(width=False, height=False)
     self.window.geometry("360x220")
+
+    self.transport_numbers = ['AА', 'АБ', 'АВ', 'АГ', 'АЖ', 'АЗ', 'АК', 'АЛ', 'АМ', 'АН', 'АП', 'АР', 'АС', 'АТ']
+
     self.window.mainloop()
 
 if __name__ == "__main__":
