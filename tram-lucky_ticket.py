@@ -1,4 +1,5 @@
 from tkinter import Tk, Label, Entry
+from tkinter import messagebox as mb
 import random
 
 class LuckyTramTicket:
@@ -13,6 +14,26 @@ class LuckyTramTicket:
 
     self.create_widgets()
     self.window.mainloop()
+
+  def validate_input(self, event=None):
+    digits = [
+      self.digit1_entry.get(),
+      self.digit2_entry.get(),
+      self.digit3_entry.get(),
+      self.digit4_entry.get(),
+      self.digit5_entry.get(),
+      self.digit6_entry.get()
+    ]
+
+    for digit in digits:
+      if not digit.isdigit() or len(digit) != 1:
+        mb.showerror(
+          title="Ошибка",
+          message="Введите по одной цифре (0-9) в каждое поле!"
+        )
+        return
+
+    self.check_ticket()
 
   def create_widgets(self):
     Label(
@@ -54,26 +75,32 @@ class LuckyTramTicket:
     self.digit1_entry = Entry(self.window, width=3, justify="center",
                      foreground="maroon1", font=("Calibri", 16))
     self.digit1_entry.grid(row=4, column=0, sticky="nw", padx=80, pady=10)
+    self.digit1_entry.bind('<Return>', self.validate_input)
 
     self.digit2_entry = Entry(self.window, width=3, justify="center",
                      foreground="maroon1", font=("Calibri", 16))
     self.digit2_entry.grid(row=4, column=0, sticky="nw", padx=120, pady=10)
+    self.digit2_entry.bind('<Return>', self.validate_input)
 
     self.digit3_entry = Entry(self.window, width=3, justify="center",
                      foreground="maroon1", font=("Calibri", 16))
     self.digit3_entry.grid(row=4, column=0, sticky="nw", padx=160, pady=10)
+    self.digit3_entry.bind('<Return>', self.validate_input)
 
     self.digit4_entry = Entry(self.window, width=3, justify="center",
                      foreground="maroon1", font=("Calibri", 16))
     self.digit4_entry.grid(row=4, column=0, sticky="nw", padx=200, pady=10)
+    self.digit4_entry.bind('<Return>', self.validate_input)
 
     self.digit5_entry = Entry(self.window, width=3, justify="center",
                      foreground="maroon1", font=("Calibri", 16))
     self.digit5_entry.grid(row=4, column=0, sticky="nw", padx=240, pady=10)
+    self.digit5_entry.bind('<Return>', self.validate_input)
 
     self.digit6_entry = Entry(self.window, width=3, justify="center",
                      foreground="maroon1", font=("Calibri", 16))
     self.digit6_entry.grid(row=4, column=0, sticky="nw", padx=280, pady=10)
+    self.digit6_entry.bind('<Return>', self.validate_input)
 
 if __name__ == "__main__":
   app = LuckyTramTicket()
