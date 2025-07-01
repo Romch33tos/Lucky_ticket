@@ -2,7 +2,6 @@ from tkinter import Tk, Label, Entry
 from tkinter import messagebox as mb
 import random
 
-
 class LuckyTramTicket:
   def __init__(self):
     self.window = Tk()
@@ -134,7 +133,6 @@ class LuckyTramTicket:
                      foreground="maroon1", font=("Calibri", 16))
     self.digit6_entry.grid(row=4, column=0, sticky="nw", padx=280, pady=10)
     self.digit6_entry.bind('<Return>', self.validate_input)
-
 
 if __name__ == "__main__":
   app = LuckyTramTicket()
