@@ -2,6 +2,7 @@ from tkinter import Tk, Label, Entry
 from tkinter import messagebox as mb
 import random
 
+
 class LuckyTramTicket:
   def __init__(self):
     self.window = Tk()
@@ -11,7 +12,7 @@ class LuckyTramTicket:
     self.window.geometry("360x220")
 
     self.transport_numbers = ['AА', 'АБ', 'АВ', 'АГ', 'АЖ', 'АЗ', 'АК', 'АЛ', 'АМ', 'АН', 'АП', 'АР', 'АС', 'АТ']
-
+    
     self.create_widgets()
     self.window.mainloop()
 
@@ -24,15 +25,15 @@ class LuckyTramTicket:
       self.digit5_entry.get(),
       self.digit6_entry.get()
     ]
-
+    
     for digit in digits:
       if not digit.isdigit() or len(digit) != 1:
         mb.showerror(
           title="Ошибка",
-          message="Введите по одной цифре (0-9) в каждое поле!"
+          message="Введите по одной цифре от 0 до 9 в каждое поле!"
         )
         return
-
+    
     self.check_ticket()
 
   def check_ticket(self):
@@ -44,7 +45,7 @@ class LuckyTramTicket:
       int(self.digit5_entry.get()),
       int(self.digit6_entry.get())
     ]
-
+    
     if sum(digits[:3]) == sum(digits[3:]):
       mb.showinfo(
         title="Результат",
@@ -55,7 +56,7 @@ class LuckyTramTicket:
         title="Результат",
         message="Это обычный билет."
       )
-
+    
     self.clear_fields()
 
   def clear_fields(self):
@@ -133,6 +134,7 @@ class LuckyTramTicket:
                      foreground="maroon1", font=("Calibri", 16))
     self.digit6_entry.grid(row=4, column=0, sticky="nw", padx=280, pady=10)
     self.digit6_entry.bind('<Return>', self.validate_input)
+
 
 if __name__ == "__main__":
   app = LuckyTramTicket()
