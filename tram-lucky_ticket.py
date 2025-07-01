@@ -47,12 +47,12 @@ class LuckyTramTicket:
     
     if sum(digits[:3]) == sum(digits[3:]):
       mb.showinfo(
-        title="Результат",
+        title="О билете",
         message="Это счастливый билет!",
       )
     else:
       mb.showinfo(
-        title="Результат",
+        title="О билете",
         message="Это обычный билет."
       )
     
