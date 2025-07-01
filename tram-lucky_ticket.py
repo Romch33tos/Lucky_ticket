@@ -1,4 +1,4 @@
-from tkinter import Tk, Label
+from tkinter import Tk, Label, Entry
 import random
 
 class LuckyTramTicket:
@@ -50,6 +50,30 @@ class LuckyTramTicket:
       fg="maroon1",
       font=("Calibri", 16)
     ).grid(row=4, column=0, sticky="nw", padx=40, pady=10)
+
+    self.digit1_entry = Entry(self.window, width=3, justify="center",
+                     foreground="maroon1", font=("Calibri", 16))
+    self.digit1_entry.grid(row=4, column=0, sticky="nw", padx=80, pady=10)
+
+    self.digit2_entry = Entry(self.window, width=3, justify="center",
+                     foreground="maroon1", font=("Calibri", 16))
+    self.digit2_entry.grid(row=4, column=0, sticky="nw", padx=120, pady=10)
+
+    self.digit3_entry = Entry(self.window, width=3, justify="center",
+                     foreground="maroon1", font=("Calibri", 16))
+    self.digit3_entry.grid(row=4, column=0, sticky="nw", padx=160, pady=10)
+
+    self.digit4_entry = Entry(self.window, width=3, justify="center",
+                     foreground="maroon1", font=("Calibri", 16))
+    self.digit4_entry.grid(row=4, column=0, sticky="nw", padx=200, pady=10)
+
+    self.digit5_entry = Entry(self.window, width=3, justify="center",
+                     foreground="maroon1", font=("Calibri", 16))
+    self.digit5_entry.grid(row=4, column=0, sticky="nw", padx=240, pady=10)
+
+    self.digit6_entry = Entry(self.window, width=3, justify="center",
+                     foreground="maroon1", font=("Calibri", 16))
+    self.digit6_entry.grid(row=4, column=0, sticky="nw", padx=280, pady=10)
 
 if __name__ == "__main__":
   app = LuckyTramTicket()
