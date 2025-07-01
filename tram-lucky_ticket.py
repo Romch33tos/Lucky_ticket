@@ -35,6 +35,38 @@ class LuckyTramTicket:
 
     self.check_ticket()
 
+  def check_ticket(self):
+    digits = [
+      int(self.digit1_entry.get()),
+      int(self.digit2_entry.get()),
+      int(self.digit3_entry.get()),
+      int(self.digit4_entry.get()),
+      int(self.digit5_entry.get()),
+      int(self.digit6_entry.get())
+    ]
+
+    if sum(digits[:3]) == sum(digits[3:]):
+      mb.showinfo(
+        title="Результат",
+        message="Это счастливый билет!",
+      )
+    else:
+      mb.showinfo(
+        title="Результат",
+        message="Это обычный билет."
+      )
+
+    self.clear_fields()
+
+  def clear_fields(self):
+    self.digit1_entry.delete(0, 'end')
+    self.digit2_entry.delete(0, 'end')
+    self.digit3_entry.delete(0, 'end')
+    self.digit4_entry.delete(0, 'end')
+    self.digit5_entry.delete(0, 'end')
+    self.digit6_entry.delete(0, 'end')
+    self.digit1_entry.focus()
+
   def create_widgets(self):
     Label(
       self.window,
